@@ -1,0 +1,197 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    font-family: 'Roboto', 'Arial', sans-serif;
+    background-color: #a5a5a5;
+    color:  #1a73e8;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h3 {
+    text-align: center;
+    color:  #1a73e8;
+    padding: 20px 0;
+    font-weight: 300;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.producto {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.producto:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.producto img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.producto:hover img {
+    transform: scale(1.1);
+}
+
+.producto-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.producto h3 {
+    margin: 10px 0;
+    color: #1a73e8;
+    font-weight: 500;
+}
+
+.producto p {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.btn-agregar {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.btn-agregar:hover {
+    background-color: #1557b0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+#carrito-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.carrito-contenido {
+    background-color: white;
+    border-radius: 12px;
+    width: 500px;
+    max-height: 80%;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.carrito-contenido h2 {
+    background-color:  #1a73e8;
+    color: white;
+    padding: 15px;
+    margin: 0;
+    text-align: center;
+    font-weight: 300;
+}
+
+.item-carrito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.btn-eliminar {
+    background-color: #3e9ce9;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-eliminar:hover {
+    background-color: #238bc8;
+}
+
+#total-carrito {
+    text-align: right;
+    font-weight: bold;
+    padding: 15px;
+    background-color: #f8f9fa;
+    font-size: 1.2em;
+}
+
+#btn-limpiar, #btn-seguir {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+#btn-limpiar {
+    background-color: #35dcaa;
+    color: white;
+}
+
+#btn-seguir {
+    background-color: #34a864;
+    color: white;
+}
+
+#btn-limpiar:hover {
+    background-color: #2386c8;
+}
+
+#btn-seguir:hover {
+    background-color: #2a9d93;
+}
+
+@media (max-width: 600px) {
+    .productos {
+        grid-template-columns: 1fr;
+    }
+
+    .carrito-contenido {
+        width: 95%;
+        margin: 0 10px;
+    }
+}
